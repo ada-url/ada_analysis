@@ -1,2 +1,18 @@
 # ada_analysis
 Repository to do data analysis
+
+The file follow the CSV format. For each URL in a set, on a given system, we include the number of cycles and instructions 
+needed to process the URL as well as many other attributes of the URL, including its protocol type, length of the path and so forth.
+You can open CSV files in a spreadsheet tool.
+
+The big_url_set is our default (github//ada-url/url-dataset/out.txt).
+
+We process each URL 30 times, but not in sequence.
+
+The benchmark done using `model_bench`. It only works under Linux because only under Linux can we get the fine grained precision we need to benchmark individual URL.
+
+We do not need report the timings (ns) for precision reasons. Only the number of cycles and the number of instructions are reported.
+
+## Systems
+
+The rome machine refers to an AMD Rome server (AMD EPYC 7262 8-Core Processor) running Ubuntu 11.3.
