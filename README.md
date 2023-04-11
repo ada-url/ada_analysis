@@ -7,7 +7,7 @@ You can open CSV files in a spreadsheet tool.
 
 The big_url_set is our default (github//ada-url/url-dataset/out.txt).
 
-We process each URL 30 times, but not in sequence.
+We process each URL 30 times, but not in sequence. We record the time needed to generate the normalized URL (href).
 
 The benchmark done using `model_bench`. It only works under Linux because only under Linux can we get the fine grained precision we need to benchmark individual URL.
 
