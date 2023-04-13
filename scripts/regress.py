@@ -49,7 +49,7 @@ predicted_attribute = "mean_instr"
 for predicted_attribute,name in [("best_instr", "instructions"), ("best_cycles", "cycles")]:
     print("=====================================")
     print("predicting ", predicted_attribute, " (", name, ")" )
-    regressor = LinearRegression(fit_intercept=True, positive=True) 
+    regressor = LinearRegression(fit_intercept=False, positive=True) 
     for protocol in range(8):
         print()
         thisframe = data[data["protocol"]==protocol]
@@ -114,3 +114,4 @@ if plots:
         pdf.savefig(fig)
 
 print("plots in ", dirname)
+
