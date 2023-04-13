@@ -12,6 +12,15 @@ from sklearn import metrics
 import sys
 from pathlib import Path
 
+####
+# TODO:
+#  [ ] - If the credential is two, I think we need to set it to zero. We probably want to remove
+#        two with saturation (never going negative).
+# 
+#  [ ] - The port size should also be reduced by 1 with saturation (never going negative).
+#
+####
+
 
 if(len(sys.argv) == 1):
     print("Please provide a filename")
@@ -79,6 +88,82 @@ for predicted_attribute,name in [("best_instr", "instructions"), ("best_cycles",
                 ax.legend(loc='best', frameon=False)
                 pdf.savefig(fig)
 
+
+
+for predicted_attribute,name in [("best_instr", "instructions"), ("best_cycles", "cycles")]:
+    print("=====================================")
+    print("predicting ", predicted_attribute, " (", name, ")", " without credentials" )
+    regressor = LinearRegression(fit_intercept=False, positive=True) 
+    for protocol in range(8):
+        print()
+        thisframe = data[data["protocol"]==protocol]
+        if thisframe.empty:
+            continue
+        thisframe = thisframe[thisframe["credential"]<=2]
+        if thisframe.empty:
+            continue
+        print("protocol = ", protocol, " ", protocols[protocol])
+        print("number of entries: ", len(thisframe.index))
+        x = thisframe[predictors]
+        y = thisframe[[predicted_attribute]]
+        regressor.fit(x, y)
+        r2 = regressor.score(x,y)
+        print("R2 = ", r2, " (", explain_r2(r2), ")")
+        print("Coefficients = ", regressor.coef_)
+        for i in zip(predictors, regressor.coef_[0]):
+            if i[1] > 0.000001:
+                print("weight for ", i[0], " = ", i[1])
+        print("Intercept = ", regressor.intercept_)
+
+        with PdfPages(dirname+protocols[protocol]+'_predicted_'+name+'_nocredentials.pdf') as pdf:
+                fig,ax = plt.subplots()
+                ax.plot(thisframe['input_size'], thisframe[predicted_attribute], label="measured", linestyle='none', marker='.', markerfacecolor='blue', markersize=4)
+                ax.plot(thisframe['input_size'], regressor.predict(x), label="predicted", linestyle='none', marker='x', markerfacecolor='red', markersize=4)
+
+                ax.set_xlabel("URL size (bytes)")
+                ax.set_ylabel(name)
+                ax.spines[['right', 'top']].set_visible(False)
+                ax.legend(loc='best', frameon=False)
+                pdf.savefig(fig)
+
+
+
+
+for predicted_attribute,name in [("best_instr", "instructions"), ("best_cycles", "cycles")]:
+    print("=====================================")
+    print("predicting ", predicted_attribute, " (", name, ")", " with credentials" )
+    regressor = LinearRegression(fit_intercept=False, positive=True) 
+    for protocol in range(8):
+        print()
+        thisframe = data[data["protocol"]==protocol]
+        if thisframe.empty:
+            continue
+        thisframe = thisframe[thisframe["credential"]>2]
+        if thisframe.empty:
+            continue
+        print("protocol = ", protocol, " ", protocols[protocol])
+        print("number of entries: ", len(thisframe.index))
+        x = thisframe[predictors]
+        y = thisframe[[predicted_attribute]]
+        regressor.fit(x, y)
+        r2 = regressor.score(x,y)
+        print("R2 = ", r2, " (", explain_r2(r2), ")")
+        print("Coefficients = ", regressor.coef_)
+        for i in zip(predictors, regressor.coef_[0]):
+            if i[1] > 0.000001:
+                print("weight for ", i[0], " = ", i[1])
+        print("Intercept = ", regressor.intercept_)
+
+        with PdfPages(dirname+protocols[protocol]+'_predicted_'+name+'_withcredentials.pdf') as pdf:
+                fig,ax = plt.subplots()
+                ax.plot(thisframe['input_size'], thisframe[predicted_attribute], label="measured", linestyle='none', marker='.', markerfacecolor='blue', markersize=4)
+                ax.plot(thisframe['input_size'], regressor.predict(x), label="predicted", linestyle='none', marker='x', markerfacecolor='red', markersize=4)
+
+                ax.set_xlabel("URL size (bytes)")
+                ax.set_ylabel(name)
+                ax.spines[['right', 'top']].set_visible(False)
+                ax.legend(loc='best', frameon=False)
+                pdf.savefig(fig)
 
 
 if plots:
