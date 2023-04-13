@@ -16,3 +16,21 @@ We do not need report the timings (ns) for precision reasons. Only the number of
 ## Systems
 
 The rome machine refers to an AMD Rome server (AMD EPYC 7262 8-Core Processor) running Ubuntu 11.3.
+
+## Python scripts
+
+We require a recent Python 3 interpreter. The Python scripts require pandas, numpy, sklearn and matplotlib. 
+You may be able to install these dependencies with `pip` or `pip3` as follows:
+
+```
+pip install pandas matplotlib scikit-learn numpy
+```
+
+(Replace `pip` with `pip3` if needed.)
+
+Example:
+
+```
+python scripts/regress.py big_url_set/ada_url_aggregator_rome.txt
+```
+(replace python by `python3` if needed)
