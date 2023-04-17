@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
 import sklearn
+import seaborn as sns
 from matplotlib.backends.backend_pdf import PdfPages
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -90,11 +91,30 @@ for predicted_attribute,name in [("best_instr", "instructions")]:
                 pdf.savefig(fig)
 
 
-plots = False
+plots = True
 if plots:
     print ("Plotting...")
     data["best_instructions_per_cycle"] = data["best_instr"]/data["best_cycles"]
     matplotlib.rcParams['font.family'] = 'serif'
+    with PdfPages(dirname+'host_size.pdf') as pdf:
+        fig,ax = plt.subplots()
+        p = sns.histplot(x="host_size",data=data, discrete=True, ax=ax)
+        p.set_xlabel("host size (bytes)")
+        p.set_ylabel("frequency")
+        p.spines[['right', 'top']].set_visible(False)
+        fig=p.get_figure()
+        pdf.savefig(fig)
+
+
+    with PdfPages(dirname+'input_size.pdf') as pdf:
+        fig,ax = plt.subplots()
+        p = sns.histplot(x="input_size",data=data[data["input_size"] < 400], discrete=True, ax=ax, bins=10)
+        p.set_xlabel("input size (bytes)")
+        p.set_ylabel("frequency")
+        p.spines[['right', 'top']].set_visible(False)
+        fig=p.get_figure()
+        pdf.savefig(fig)
+
     with PdfPages(dirname+'instructions_per_cycle.pdf') as pdf:
         p=data.plot(x='input_size', y='best_instructions_per_cycle', linestyle='none',legend=False, marker='.', markerfacecolor='blue', markersize=4)
         p.set_xlabel("URL size (bytes)")
