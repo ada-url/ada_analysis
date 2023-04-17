@@ -13,15 +13,6 @@ from sklearn import metrics
 import sys
 from pathlib import Path
 
-####
-# TODO:
-#  [ ] - If the credential is two, I think we need to set it to zero. We probably want to remove
-#        two with saturation (never going negative).
-# 
-#  [ ] - The port size should also be reduced by 1 with saturation (never going negative).
-#
-####
-
 
 if(len(sys.argv) == 1):
     print("Please provide a filename")

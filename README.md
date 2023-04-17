@@ -19,11 +19,11 @@ The rome machine refers to an AMD Rome server (AMD EPYC 7262 8-Core Processor) r
 
 ## Python scripts
 
-We require a recent Python 3 interpreter. The Python scripts require pandas, numpy, sklearn and matplotlib. 
+We require a recent Python 3 interpreter. The Python scripts require pandas, numpy, sklearn, seaborn and matplotlib. 
 You may be able to install these dependencies with `pip` or `pip3` as follows:
 
 ```
-pip install pandas matplotlib scikit-learn numpy
+pip install pandas matplotlib scikit-learn numpy seaborn
 ```
 
 (Replace `pip` with `pip3` if needed.)
