@@ -34,3 +34,9 @@ Example:
 python scripts/regress.py big_url_set/ada_url_aggregator_rome.txt
 ```
 (replace python by `python3` if needed)
+
+
+You can process the over data.
+```
+python scripts/overall.py
+```
