@@ -50,7 +50,7 @@ for datafile in datafiles:
       file_contents = json_file.read()
       print()
       print(datafile)
-      print("{name} & {insperurl} & {cyclesperurl} & {inspercycle} \\\\".format(name = "name",insperurl= "instructions/url", cyclesperurl= "cycles/url", inspercycle = "instructions/cycle"))
+      print("\\toprule\n{name} & {insperurl} & {cyclesperurl} & {inspercycle} \\\\\\midrule".format(name = "name",insperurl= "instr./url", cyclesperurl= "cycles/url", inspercycle = "instr./cycle"))
       parsed_json = json.loads(file_contents)
       for benchmark_name in benchmarks:
          arr = parsed_json["benchmarks"]
@@ -62,11 +62,8 @@ for datafile in datafiles:
          obj = right_obj
          speeds[benchmark_name[1]].append(obj["url/s"]/1000000)
          print("{name} & {insperurl} & {cyclesperurl} & {inspercycle} \\\\".format(name = benchmark_name[1],insperurl= round(obj["instructions/url"]), cyclesperurl= round(obj["cycles/url"]), inspercycle = round(obj["instructions/cycle"])))
+      print("\\bottomrule")
 
-
-#ax.set_ylim(0, 250)
-
-#plt.show()
 
 
 matplotlib.rcParams['font.family'] = 'serif'
