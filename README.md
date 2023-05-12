@@ -15,9 +15,10 @@ We do not need report the timings (ns) for precision reasons. Only the number of
 
 ## Systems
 
-The rome machine refers to an AMD Rome server (AMD EPYC 7262 8-Core Processor) running Ubuntu 11.3.
+The rome machine refers to an AMD Rome server (AMD EPYC 7262 8-Core Processor) running Ubuntu with GCC 11.3. The m2 machine refers to a MacBook Air 2022 with LLVM 14.
 
 ## Python scripts
+
 
 We require a recent Python 3 interpreter. The Python scripts require pandas, numpy, sklearn, seaborn and matplotlib. 
 You may be able to install these dependencies with `pip` or `pip3` as follows:
@@ -28,15 +29,27 @@ pip install pandas matplotlib scikit-learn numpy seaborn
 
 (Replace `pip` with `pip3` if needed.)
 
-Example:
+
+### Overall data (Google benchmark)
+
+
+The overall data comes from various datasets and is produced by the google-benchmark executable `benchdata` from the main `ada-url/ada` repository.
+
+You can process the overall data and generate the tables and figures.
 
 ```
-python scripts/regress.py big_url_set/ada_url_aggregator_rome.txt
+python scripts/overall.py
 ```
 (replace python by `python3` if needed)
 
 
-You can process the over data.
+### jsurl
+
+The jsurl data refers to https://github.com/ada-url/js_url_benchmark
+
+
+
 ```
-python scripts/overall.py
+python scripts/jsurl.py
 ```
+(replace python by `python3` if needed)

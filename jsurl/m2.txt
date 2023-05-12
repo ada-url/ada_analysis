@@ -1,0 +1,99 @@
+Now using node v20.1.0 (npm v9.6.4)
+cpu: unknown
+runtime: deno 1.32.5 (aarch64-apple-darwin)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt     141.17 ms/iter (137.75 ms … 153.24 ms) 138.77 ms 153.24 ms 153.24 ms
+fixtures/kasztp.txt           35.54 ms/iter   (35.32 ms … 35.74 ms)  35.62 ms  35.74 ms  35.74 ms
+fixtures/userbait.txt         13.06 ms/iter   (12.98 ms … 13.33 ms)  13.05 ms  13.33 ms  13.33 ms
+fixtures/top100.txt             102 ms/iter  (101.6 ms … 103.83 ms)    102 ms 103.83 ms 103.83 ms
+fixtures/wikipedia_100k.txt   68.22 ms/iter   (67.84 ms … 68.86 ms)   68.3 ms  68.86 ms  68.86 ms
+Average URL size: 61 bytes
+Ratio of bad URLs: 0.02%
+
+cpu: Apple M2
+runtime: bun 0.5.9 (arm64-darwin)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt      54.51 ms/iter   (52.32 ms … 60.04 ms)  53.74 ms  60.04 ms  60.04 ms
+fixtures/kasztp.txt           23.52 ms/iter   (23.06 ms … 30.56 ms)  23.34 ms  30.56 ms  30.56 ms
+fixtures/userbait.txt          7.02 ms/iter    (6.87 ms … 13.49 ms)   6.96 ms  13.49 ms  13.49 ms
+fixtures/top100.txt            66.9 ms/iter   (66.03 ms … 72.72 ms)  66.37 ms  72.72 ms  72.72 ms
+fixtures/wikipedia_100k.txt   34.78 ms/iter    (33.7 ms … 40.65 ms)  34.24 ms  40.65 ms  40.65 ms
+Average URL size: 61 bytes
+Ratio of bad URLs: 0.03%
+
+Now using node v16.20.0 (npm v8.19.4)
+cpu: Apple M2
+runtime: node v16.20.0 (arm64-darwin)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt     171.61 ms/iter (170.47 ms … 172.97 ms) 172.01 ms 172.97 ms 172.97 ms
+fixtures/kasztp.txt           56.18 ms/iter   (55.69 ms … 56.74 ms)  56.37 ms  56.74 ms  56.74 ms
+fixtures/userbait.txt         16.76 ms/iter   (16.44 ms … 16.96 ms)  16.81 ms  16.96 ms  16.96 ms
+fixtures/top100.txt          147.05 ms/iter (146.59 ms … 147.54 ms) 147.22 ms 147.54 ms 147.54 ms
+fixtures/wikipedia_100k.txt  105.13 ms/iter (104.77 ms … 105.48 ms) 105.36 ms 105.48 ms 105.48 ms
+Average URL size: 62 bytes
+Ratio of bad URLs: 0.02%
+
+Now using node v17.9.1 (npm v8.11.0)
+cpu: Apple M2
+runtime: node v17.9.1 (arm64-darwin)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt     168.84 ms/iter (168.48 ms … 169.35 ms) 168.92 ms 169.35 ms 169.35 ms
+fixtures/kasztp.txt           47.57 ms/iter    (47.3 ms … 47.77 ms)  47.65 ms  47.77 ms  47.77 ms
+fixtures/userbait.txt         14.42 ms/iter    (14.31 ms … 14.7 ms)  14.44 ms   14.7 ms   14.7 ms
+fixtures/top100.txt          131.56 ms/iter  (130.5 ms … 135.62 ms)  131.9 ms 135.62 ms 135.62 ms
+fixtures/wikipedia_100k.txt   89.13 ms/iter   (87.89 ms … 90.31 ms)   89.1 ms  90.31 ms  90.31 ms
+Average URL size: 61 bytes
+Ratio of bad URLs: 0.02%
+
+Now using node v18.15.0 (npm v9.5.0)
+cpu: Apple M2
+runtime: node v18.15.0 (arm64-darwin)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt     159.45 ms/iter (158.64 ms … 161.12 ms) 159.75 ms 161.12 ms 161.12 ms
+fixtures/kasztp.txt           46.55 ms/iter   (45.97 ms … 47.71 ms)  46.67 ms  47.71 ms  47.71 ms
+fixtures/userbait.txt         14.06 ms/iter   (13.91 ms … 14.23 ms)  14.11 ms  14.23 ms  14.23 ms
+fixtures/top100.txt           127.6 ms/iter  (126.83 ms … 128.7 ms) 127.61 ms  128.7 ms  128.7 ms
+fixtures/wikipedia_100k.txt   86.21 ms/iter   (85.76 ms … 87.97 ms)  86.24 ms  87.97 ms  87.97 ms
+Average URL size: 61 bytes
+Ratio of bad URLs: 0.02%
+
+Now using node v18.16.0 (npm v9.5.1)
+cpu: Apple M2
+runtime: node v18.16.0 (arm64-darwin)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt     108.57 ms/iter  (108.36 ms … 108.9 ms)  108.6 ms  108.9 ms  108.9 ms
+fixtures/kasztp.txt           33.13 ms/iter   (32.98 ms … 33.29 ms)   33.2 ms  33.29 ms  33.29 ms
+fixtures/userbait.txt          9.77 ms/iter     (9.68 ms … 9.92 ms)   9.82 ms   9.92 ms   9.92 ms
+fixtures/top100.txt           86.38 ms/iter   (85.55 ms … 87.73 ms)  86.42 ms  87.73 ms  87.73 ms
+fixtures/wikipedia_100k.txt   61.11 ms/iter   (60.67 ms … 61.83 ms)  61.16 ms  61.83 ms  61.83 ms
+Average URL size: 61 bytes
+Ratio of bad URLs: 0.02%
+
+Now using node v20.1.0 (npm v9.6.4)
+cpu: Apple M2
+runtime: node v20.1.0 (arm64-darwin)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt      49.84 ms/iter   (49.68 ms … 50.53 ms)  49.84 ms  50.53 ms  50.53 ms
+fixtures/kasztp.txt           14.27 ms/iter   (14.15 ms … 14.38 ms)   14.3 ms  14.38 ms  14.38 ms
+fixtures/userbait.txt          4.02 ms/iter      (3.9 ms … 4.38 ms)   4.07 ms   4.34 ms   4.38 ms
+fixtures/top100.txt           34.44 ms/iter    (34.3 ms … 34.53 ms)  34.48 ms  34.53 ms  34.53 ms
+fixtures/wikipedia_100k.txt    26.7 ms/iter    (26.44 ms … 26.9 ms)  26.82 ms   26.9 ms   26.9 ms
+Average URL size: 61 bytes
+Ratio of bad URLs: 0.03%
+
+Restoring node version to v20.1.0
+Now using node v20.1.0 (npm v9.6.4)

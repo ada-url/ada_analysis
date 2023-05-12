@@ -72,8 +72,6 @@ for maindirname in mainoveralldir:
                 print("{name} & {insperurl} & {cyclesperurl} & {inspercycle} \\\\".format(name = benchmark_name[1],insperurl= round(obj["instructions/url"]), cyclesperurl= round(obj["cycles/url"]), inspercycle = round(obj["instructions/cycle"])))
             print("\\bottomrule")
 
-
-
     matplotlib.rcParams['font.family'] = 'serif'
     with PdfPages(maindirname+'.pdf') as pdf:
         x = np.arange(len(datasets))  # the label locations
@@ -85,10 +83,8 @@ for maindirname in mainoveralldir:
         for attribute, measurement in speeds.items():
             offset = width * multiplier
             rects = ax.bar(x + offset, measurement, width, label=attribute)
-            #ax.bar_label(rects, padding=3)
             multiplier += 1
 
-        # Add some text for labels, title and custom x-axis tick labels, etc.
         ax.set_ylabel('Millions of URLs per second')
         ax.set_xticks(x + width, datasets)
         ax.legend(loc='upper center', frameon=True, ncols=5, facecolor='white', framealpha=0.5, edgecolor='none',  bbox_to_anchor=(0.5, 1.05))

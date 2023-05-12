@@ -1,3 +1,41 @@
+runtime: deno 1.32.5
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt     178.48 ms/iter (177.19 ms … 181.27 ms) 178.93 ms 181.27 ms 181.27 ms
+fixtures/kasztp.txt           56.35 ms/iter   (55.84 ms … 56.75 ms)  56.52 ms  56.75 ms  56.75 ms
+fixtures/userbait.txt         20.11 ms/iter   (20.01 ms … 20.49 ms)  20.15 ms  20.49 ms  20.49 ms
+fixtures/top100.txt          151.64 ms/iter (150.42 ms … 152.82 ms) 152.08 ms 152.82 ms 152.82 ms
+fixtures/wikipedia_100k.txt  105.28 ms/iter (104.48 ms … 106.03 ms) 105.63 ms 106.03 ms 106.03 ms
+Average URL size: 62 bytes
+Ratio of bad URLs: 0.02%
+
+cpu: AMD EPYC 7262 8-Core Processor
+runtime: bun 0.5.9 (x64-linux)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt      94.01 ms/iter  (89.26 ms … 105.37 ms)   93.6 ms 105.37 ms 105.37 ms
+fixtures/kasztp.txt           44.51 ms/iter   (42.65 ms … 54.83 ms)  44.15 ms  54.83 ms  54.83 ms
+fixtures/userbait.txt         13.55 ms/iter   (12.94 ms … 27.63 ms)  13.34 ms  27.63 ms  27.63 ms
+fixtures/top100.txt          126.37 ms/iter (124.24 ms … 137.77 ms) 126.28 ms 137.77 ms 137.77 ms
+fixtures/wikipedia_100k.txt   72.79 ms/iter   (64.04 ms … 91.41 ms)  76.46 ms  91.41 ms  91.41 ms
+Average URL size: 61 bytes
+Ratio of bad URLs: 0.02%
+
+Now using node v16.20.0 (npm v8.19.4)
+cpu: AMD EPYC 7262 8-Core Processor
+runtime: node v16.20.0 (x64-linux)
+
+benchmark                        time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------------------------- -----------------------------
+fixtures/linux_files.txt     632.24 ms/iter (629.75 ms … 635.23 ms) 633.13 ms 635.23 ms 635.23 ms
+fixtures/kasztp.txt           193.7 ms/iter (192.67 ms … 194.41 ms) 194.13 ms 194.41 ms 194.41 ms
+fixtures/userbait.txt         50.67 ms/iter   (50.18 ms … 51.52 ms)  50.78 ms  51.52 ms  51.52 ms
+fixtures/top100.txt          479.62 ms/iter (474.31 ms … 481.64 ms) 480.56 ms 481.64 ms 481.64 ms
+fixtures/wikipedia_100k.txt  393.44 ms/iter (391.11 ms … 396.82 ms) 393.91 ms 396.82 ms 396.82 ms
+Average URL size: 62 bytes
+Ratio of bad URLs: 0.02%
 
 Now using node v17.9.1 (npm v8.11.0)
 cpu: AMD EPYC 7262 8-Core Processor
