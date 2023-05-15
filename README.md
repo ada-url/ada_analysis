@@ -32,6 +32,7 @@ pip install pandas matplotlib scikit-learn numpy seaborn
 
 ### Overall data (Google benchmark)
 
+To collect the data, see `overall/README.md`.
 
 The overall data comes from various datasets and is produced by the google-benchmark executable `benchdata` from the main `ada-url/ada` repository.
 

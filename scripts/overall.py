@@ -34,10 +34,14 @@ benchmarks=[ ("BasicBench_AdaURL_aggregator_href", "ada"), ("BasicBench_whatwg",
 mainoveralldir = [datafile for datafile in os.listdir(overall_dir)]
 
 for maindirname in mainoveralldir:
+
+
+    maindir = os.path.join(overall_dir, maindirname)
+    if (not os.path.isdir(maindir) ):
+        print("not a dir:", maindir)
+        continue
     print(maindirname)
     print("=====================================")
-    maindir = os.path.join(overall_dir, maindirname)
-
     datasets = []
     speeds= {
         "ada": [],
