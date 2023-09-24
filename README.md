@@ -1,17 +1,11 @@
 # ada_analysis
-Repository to do data analysis
+Repository of benchmarking results for the ada-url library
 
-The file follow the CSV format. For each URL in a set, on a given system, we include the number of cycles and instructions 
-needed to process the URL as well as many other attributes of the URL, including its protocol type, length of the path and so forth.
-You can open CSV files in a spreadsheet tool.
+Experimental results are found in jsurl/ and overall/. They cover two systems (Apple M2 and AMD Rome).
 
-The big_url_set is our default (github//ada-url/url-dataset/out.txt).
+We also have data regarding the characteristics of URLs in big_url_set. This repository contains two CSV files. For each URL in a set, on a given system, we include the number of cycles and instructions needed to process the URL as well as many other attributes of the URL, including its protocol type, length of the path and so forth.
+You can open CSV files in a spreadsheet tool. The performance results are not primary: these files are used mostly to understand the statistical characteristics of URLs. The big_url_set is based on the URL collection at (github//ada-url/url-dataset/out.txt).
 
-We process each URL 30 times, but not in sequence. We record the time needed to generate the normalized URL (href).
-
-The benchmark done using `model_bench`. It only works under Linux because only under Linux can we get the fine grained precision we need to benchmark individual URL.
-
-We do not need report the timings (ns) for precision reasons. Only the number of cycles and the number of instructions are reported.
 
 ## Systems
 
@@ -47,7 +41,6 @@ python scripts/overall.py
 ### jsurl
 
 The jsurl data refers to https://github.com/ada-url/js_url_benchmark
-
 
 
 ```
